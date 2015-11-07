@@ -1,0 +1,33 @@
+<%= link_to fa_icon('chevron-left'), contas_recebers_path, :class => "btn btn-default btn-lg",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Voltar"  %>
+
+<%= link_to fa_icon('pencil-square-o'), edit_contas_receber_path(@contas_receber), :class => "btn btn-default btn-lg",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Editar" %>
+
+<p>
+  <strong>Data de Emissao:</strong>
+  <%= @contas_receber.dataEmissao %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @contas_receber.valor %>
+</p>
+
+<p>
+  <strong>Vencimento:</strong>
+  <%= @contas_receber.vencimento %>
+</p>
+
+<p>
+  <strong>Juros:</strong>
+  <%= @contas_receber.juros %>
+</p>
+
+<p>
+  <strong>Multa:</strong>
+  <%= @contas_receber.multa %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @contas_receber.Cliente.nome %>
+</p>

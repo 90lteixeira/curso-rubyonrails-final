@@ -1,0 +1,33 @@
+<%= link_to fa_icon('chevron-left'), contas_pagars_path, :class => "btn btn-default btn-lg",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Voltar"  %>
+
+<%= link_to fa_icon('pencil-square-o'), edit_contas_pagar_path(@contas_pagar), :class => "btn btn-default btn-lg",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Editar" %>
+
+<p>
+  <strong>Data de Emissao:</strong>
+  <%= @contas_pagar.dataEmissao %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @contas_pagar.valor %>
+</p>
+
+<p>
+  <strong>Vencimento:</strong>
+  <%= @contas_pagar.vencimento %>
+</p>
+
+<p>
+  <strong>Juros:</strong>
+  <%= @contas_pagar.juros %>
+</p>
+
+<p>
+  <strong>Multa:</strong>
+  <%= @contas_pagar.multa %>
+</p>
+
+<p>
+  <strong>Fornecedor:</strong>
+  <%= @contas_pagar.Fornecedor.nome %>
+</p>

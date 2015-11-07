@@ -1,0 +1,34 @@
+== README
+
+Sistema básico de Ruby on Rails.
+
+Este sistema contém:
+
+* Login -> 
+ devise
+
+* Gerenciamento -> 
+ cancancan 
+ rolify 
+
+* Paginação ->
+ will_pagination
+ kaminari
+
+* Cadastro
+
+* Lista
+
+* Pesquisa
+
+* Css ->
+ bootstrap
+ personalizado
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

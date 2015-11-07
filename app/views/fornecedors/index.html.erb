@@ -1,0 +1,69 @@
+<h1><i class="fa fa-users"></i>Listagem de Fornecedores</h1>
+
+<% if notice.present? then %>
+  <p id="notice" class=" alert alert-info"><%= notice %></p>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-8">
+<%= link_to fa_icon('user-plus', text: "Novo Fornecedor"), 
+new_fornecedor_path, :class => "btn btn-success" %>
+
+  </div>
+  <div class="col-xs-4 text-right">
+    <%= form_tag(fornecedors_path, method: "get") do %>
+      <div class="input-group">
+        <%= text_field_tag(:p, '', class: 'form-control') %>
+        <span class="input-group-btn">
+          <%= button_tag class: 'btn btn-primary' do %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cnpj</th>
+      <th>Endereco</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>Uf</th>
+      <th>Pais</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fornecedors.each do |fornecedor| %>
+      <tr>
+        <td><%= fornecedor.nome %></td>
+        <td><%= fornecedor.cnpj %></td>
+        <td><%= fornecedor.endereco %></td>
+        <td><%= fornecedor.bairro %></td>
+        <td><%= fornecedor.cidade %></td>
+        <td><%= fornecedor.uf %></td>
+        <td><%= fornecedor.pais %></td>
+        <td>
+          <%= link_to fa_icon('eye'), fornecedor, :class => "btn btn-default",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Ver mais dados" %>
+          <%= link_to fa_icon('pencil-square-o'), edit_fornecedor_path(fornecedor) , :class => "btn btn-default",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Editar" %>
+          <%= link_to fa_icon('times'), fornecedor, method: :delete, data: { confirm: 'Você tem certeza de apagar o '+fornecedor.nome+'?'}, :class => "btn btn-danger",  "data-toggle" => "tooltip","data-placement" => "top", :title => "Excluir" %></td>
+      </tr>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<hr>
+
+<div class="digg_pagination"> 
+  <%= will_paginate @fornecedors, :container => false %>
+</div>
+
